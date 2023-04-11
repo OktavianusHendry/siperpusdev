@@ -1,7 +1,7 @@
 <?php
 
-    include_once("function/koneksi.php");
-    include_once("function/helper.php");
+    include_once("koneksi.php");
+    include_once("helper.php");
 
     $no_pembaca = $_POST['no_pembaca'];//no_pembaca yg oren itu ambil dri form
     $password = $_POST['password'];

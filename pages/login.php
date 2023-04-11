@@ -26,7 +26,7 @@
         <div class="content">
             <a href="index.php"><img src="../images/logo_universitas.png"></a>
 
-            <form action="<?php echo BASE_URL.'proses_login.php'; ?>" method="POST">
+            <form action="<?php echo BASE_URL.'../function/proses_login.php'; ?>" method="POST">
 
                 <?php
                     $notif = isset($_POST['notif']) ? $_GET['notif'] : false;

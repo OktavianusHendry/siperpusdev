@@ -144,6 +144,7 @@ a {
     position: relative;
 }
 .btn-login {
+    font-family: "Montserrat", sans-serif;
     width: 65px;
     float: right;
     position: relative;
@@ -168,11 +169,11 @@ a {
     float: right;
 }
 .btn-myp {
-    width: 85px;
-    float: right;
+    font-family: "Montserrat", sans-serif;
+    width: 90px;
     position: relative;
     top: 10px;
-    right: 30px;
+    right: 27px;
     border: 1px solid #fd7e14;
     padding: 5px 10px;
     border-radius: 5px;
@@ -188,6 +189,7 @@ a {
     transition: 0.5s;
 }
 .btn-logout {
+    font-family: "Montserrat", sans-serif;
     width: 65px;
     float: right;
     position: relative;
@@ -200,7 +202,6 @@ a {
     color: #fff;
     font-weight: bold;
     font-size: 12px;
-    margin-right: 5px;
 }
 .btn-logout:hover {
     cursor: pointer;
