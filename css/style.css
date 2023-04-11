@@ -1,0 +1,550 @@
+@import url("http://fonts.googleapis.com/css?family=Montserrat:500");
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    font-family: "Montserrat", sans-serif;
+    /* switch */
+    background: #313338;
+    background: #f0f1f1;
+    color: hsl(0, 0, 98%);
+    transition: background 0.75s ease-in-out;
+}
+/* switch */
+.dark {
+    color: #fff;
+    transition: color 0.75s ease-in-out;
+}
+.backgroundDark {
+    background: #313338;
+    transition: background 0.75s ease-in-out;
+}
+/* .navbarDark {
+    background-color: #313338;
+    transition: background 0.75s ease-in-out;
+} */
+label {
+    position: relative;
+    display: inline-block;
+    float: right;
+    right: 50px;
+    top: 10px;
+    width: 60px;
+}
+label input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}
+label svg {
+    width: 60px;
+    height: auto;
+    display: inline-block;
+}
+/* include transitions for the elements modified as the input is checked */
+label input + svg .light {
+    transition: opacity 0.75s cubic-bezier(0.68, 0.25, 0.265, 1);
+}
+label input + svg .translate,
+label input + svg .rotate,
+label input + svg .background,
+label input + svg .astronaut,
+label input + svg .surfer {
+    transition: transform 0.75s cubic-bezier(0.68, 0.25, 0.265, 1);
+}
+/* make the .light element fully transparent to have the .dark variant see through */
+label input:checked + svg .light {
+    opacity: 0;
+}
+/* translate the sun/moon toward the right (by default it is pushed back with a negative translation) */
+label input:checked + svg .translate {
+    transform: translateX(0px);
+}
+/* rotate the moon (by default it is rotated counter-clockwise) */
+label input:checked + svg .rotate {
+    transform: rotate(0deg);
+}
+/* translate the scale the backgrounds to 0
+this is rather neat, so meant an extra comment
+- the light background is positioned with two groups, one pushing it below the graphic, one back up; by removing the translation of this last group the background "returns" below the toggle
+- the dark background is positioned above and with a smaller vertical scale; by removing the translation it is placed in full view and by increasing its scale it's as if the stars would tumble down with different rates
+*/
+label input:checked + svg .background {
+    transform: translate(0px) scale(1);
+}
+/* switch end */
+p,
+h3 {
+    margin: 0;
+    padding: 0;
+}
+a {
+    outline: none;
+    text-decoration: none;
+    color: black;
+}
+.header {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+}
+.header nav ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    float: right;
+}
+.header nav {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 20px 0px;
+    background-color: #fff;
+    clear: both;
+    float: right;
+    padding-bottom: 0;
+    height: 70px;
+}
+.header nav ul li {
+    height: 30px;
+    position: relative;
+    display: inline-block;
+    /* margin-right: 10px; */
+    top: 8px;
+    color: black;
+    border-left: 2px solid #00000050;
+    /* padding-left: 10px; */
+    right: 50px;
+    /* margin-left: 10px; */
+    padding: 0 20px;
+}
+.header nav ul li:last-child {
+    margin-right: 10px;
+    border-right: 2px solid #00000050;
+    position: relative;
+    padding-right: 10px;
+    padding: 0 20px;
+}
+.header nav ul li a {
+    color: black;
+    position: relative;
+    top: 7px;
+}
+.header nav ul li a:hover {
+    color: #fd7e14;
+    transition: 0.5s;
+}
+
+.logo {
+    width: 100px;
+    left: 30px;
+    position: relative;
+}
+.btn-login {
+    width: 65px;
+    float: right;
+    position: relative;
+    top: 10px;
+    right: 30px;
+    border: 1px solid #fd7e14;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #fd7e14;
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+}
+.btn-login:hover {
+    cursor: pointer;
+    background-color: #0e6333;
+    border: 1px solid #0e6333;
+    transition: 0.5s;
+}
+svg#btn_search {
+    float: right;
+    right: 45px;
+    top: 17px;
+    position: relative;
+}
+.strip {
+    border-bottom: 10px solid #0e6333;
+    width: 100%;
+    display: block;
+    float: left;
+    box-shadow: 0px 2px 7.5px rgba(0, 0, 0, 0.471);
+    /* margin-bottom: 30px; */
+    margin-top: 20px;
+}
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+.SectionKiri {
+    width: 40%;
+    float: left;
+    height: auto;
+    /* background-color: #0e6333; */
+    padding: 20px 0px;
+    display: inline;
+}
+.SectionTengah {
+    width: 35%;
+    float: left;
+    height: 100%;
+    /* background-color: #0e6333; */
+    padding: 20px 0px;
+}
+.SectionKanan {
+    margin-top: 5px;
+    width: 23%;
+    float: left;
+    height: 447px;
+    /* background-color: #0e6333; */
+    padding: 20px 0px;
+    border: 1px solid #fd7e14;
+    border-radius: 20px;
+    padding: 15px 20px;
+    margin-right: 0;
+    padding-right: 0px;
+}
+.SectionKanan .gambarBuku {
+    width: 30%;
+}
+.SectionKanan .deskripsiBuku {
+    font-size: 12px;
+    width: 70%;
+    float: right;
+    text-align: left;
+}
+
+.StripKuning {
+    border-bottom: 10px solid #fd7e14;
+    width: 90%;
+    display: block;
+    float: left;
+}
+.StripHijau {
+    border-bottom: 4px solid #0e6333;
+    margin-bottom: 35px;
+    width: 90%;
+    display: block;
+    float: left;
+}
+.title {
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+.bungkusBuku {
+    width: 200px;
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+.bungkusBuku img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.deskripsiBuku {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.scroll {
+    overflow-x: scroll;
+    width: 90%;
+    display: inline-block;
+    white-space: nowrap;
+    margin-bottom: 40px;
+}
+.scrollKanan {
+    height: 360px;
+    overflow-y: scroll;
+    width: 90%;
+    display: inline-block;
+    white-space: nowrap;
+}
+.SectionKanan .bungkusBuku img {
+    margin: 0;
+    margin-right: 10px;
+}
+.SectionKanan .bungkusBuku {
+    display: flex;
+    align-items: center;
+}
+/* Scroll bar */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #dedede;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(163, 163, 163);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(163, 163, 163);
+}
+/* Kelar Scroll Bar */
+
+/* Section blog */
+
+.blog {
+    float: left;
+    width: 100%;
+}
+.blog h2 {
+    margin: 0;
+    margin-bottom: 10px;
+    margin-top: 50px;
+}
+.blog .StripKuning {
+    border-bottom: 10px solid #fd7e14;
+    width: 100%;
+    display: block;
+    float: left;
+}
+.blog .StripHijau {
+    border-bottom: 4px solid #0e6333;
+    margin-bottom: 35px;
+    width: 100%;
+    display: block;
+    float: left;
+}
+.scrollBlog {
+    white-space: nowrap;
+    overflow-x: scroll;
+    width: 100%;
+    margin-bottom: 40px;
+}
+.gambarBlog {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    position: initial;
+}
+.pembungkusBlog {
+    width: 300px;
+    height: auto;
+    display: inline-block;
+    margin-right: 20px;
+}
+.pembungkusBlog h3 {
+    margin-top: 5px;
+    text-align: left;
+    margin-bottom: 15px;
+}
+/* Banner */
+#pembungkusBanner {
+    width: 100%;
+    overflow: hidden;
+    margin: 10px 0 50px 0;
+    /* margin-top: 140px; */
+    background: white;
+    transition: 0.75s ease-in-out;
+}
+.banner {
+    height: 334px;
+    width: 6700px;
+    /* margin-bottom: 80px; */
+    /* display: inline-block; */
+}
+.banner img {
+    width: 1200px;
+    height: 334px;
+    object-fit: cover;
+    margin-right: 15px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.banner img:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    cursor: pointer;
+
+    -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Deskripsi Buku */
+.pageBack {
+    display: block;
+}
+
+.pageBack a {
+    color: #000;
+}
+
+.pageBack a:hover {
+    color: #fd7e14;
+    transition: 0.5s;
+}
+
+.KiriDeskripsi {
+    width: 24%;
+    height: auto;
+    margin-right: 36px;
+}
+
+.KiriDeskripsi .bungkusBuku {
+    width: 100%;
+    height: auto;
+}
+
+.KananDeskripsi {
+    width: 70%;
+}
+
+.kecilinMargin {
+    margin-bottom: 15px;
+}
+
+.lebarinWidth {
+    width: 100%;
+}
+
+.tableDeskripsi {
+    width: 100%;
+    height: auto;
+    font-size: 13px;
+    margin-bottom: 14px;
+}
+
+.tableDeskripsi th {
+    text-align: left;
+    width: 5%;
+}
+
+.tableDeskripsi td {
+    width: 70%;
+}
+
+.btn-pinjam {
+    width: 65px;
+    border: 1px solid #fd7e14;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #fd7e14;
+    color: #fff;
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 24px;
+}
+
+.btn-pinjam:hover {
+    cursor: pointer;
+    background-color: #0e6333;
+    border: 1px solid #0e6333;
+    transition: 0.5s;
+}
+
+#myBtn {
+    color: #fd7e14;
+    cursor: pointer;
+}
+
+#myBtn:hover {
+    color: #0e6333;
+    transition: 0.5s;
+}
+
+.deskripsi {
+    margin-bottom: 8px;
+    width: 90%;
+}
+
+#more {
+    display: none;
+}
+
+.similar {
+    width: 100%;
+}
+
+/* animasi */
+.firstBanner {
+    -webkit-animation: bannermove 30s linear infinite;
+    -moz-animation: bannermove 30s linear infinite;
+    -ms-animation: bannermove 30s linear infinite;
+    -o-animation: bannermove 30s linear infinite;
+    animation: bannermove 30s linear infinite;
+}
+
+@keyframes "bannermove" {
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: -3500px;
+    }
+}
+
+@-moz-keyframes bannermove {
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: -3500px;
+    }
+}
+
+@-webkit-keyframes "bannermove" {
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: -3500px;
+    }
+}
+
+@-ms-keyframes "bannermove" {
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: -3500px;
+    }
+}
+
+@-o-keyframes "bannermove" {
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: -3500px;
+    }
+}
+
+/* iseng */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.fill {
+    width: 100%;
+    height: 130px;
+}
