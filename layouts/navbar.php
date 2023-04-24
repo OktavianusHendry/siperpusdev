@@ -16,9 +16,9 @@
         <link
             rel="shortcut icon"
             type="image/icon"
-            href="images/praditaicon1.ico"
+            href="../images/praditaicon1.ico"
         />
-        <script defer src="js/script.js"></script>
+        <script defer src="../js/script.js"></script>
     </head>
 
     <body>
@@ -26,7 +26,7 @@
             <header class="header">
                 <nav id="navbar">
                     <img
-                        src="images/logo_universitas.png"
+                        src="../images/logo_universitas.png"
                         alt="logo"
                         class="logo"
                     />
@@ -344,7 +344,7 @@
                     </label>
                     <!-- End Of Switches -->
                     <ul>
-                        <li><a href="index.php">Home</a></li>
+                        <li><a href="../index.php">Home</a></li>
                         <li><a href="#">Collection</a></li>
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Menu</a></li>

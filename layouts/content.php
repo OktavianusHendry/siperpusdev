@@ -33,11 +33,11 @@
                             
                             echo "
                                 <div class ='bungkusBuku'>
-                                    <a href='".BASE_URL."index.php?page=detail&kode_buku=$row[kode_buku]&inisial_nama_belakang=$row[inisial_nama_belakang]&huruf_depan_judul=$row[huruf_depan_judul]'>
+                                    <a href='".BASE_URL."../pages/detail.php?page=detail&kode_buku=$row[kode_buku]&inisial_nama_belakang=$row[inisial_nama_belakang]&huruf_depan_judul=$row[huruf_depan_judul]'>
                                         <img src='$row[gambar_buku]' class='gambarBuku'/>
                                     <h3 class='deskripsiBuku'> $row[judul]</h3> <p class='deskripsiBuku'>$row[penulis]</p>
                                         </a>
-                                    </div>";
+                                </div>";
                         }
                         ?>
                     </div>
@@ -49,39 +49,20 @@
                     <div class="StripHijau"></div>
 
                     <div class="scroll">
-                        <div class="bungkusBuku">
-                            <a href="pagebuku.html">
-                                <img
-                                    src="images/book-cover-small.png"
-                                    alt="gambar buku"
-                                    class="gambarBuku"
-                                />
-                                <h3 class="deskripsiBuku">Ini Judul Buku</h3>
-                                <p class="deskripsiBuku">Ini Penulis Buku</p>
-                            </a>
-                        </div>
-                        <div class="bungkusBuku">
-                            <a href="pagebuku.html">
-                                <img
-                                    src="images/book-cover-small.png"
-                                    alt="gambar buku"
-                                    class="gambarBuku"
-                                />
-                                <h3 class="deskripsiBuku">Ini Judul Buku</h3>
-                                <p class="deskripsiBuku">Ini Penulis Buku</p>
-                            </a>
-                        </div>
-                        <div class="bungkusBuku">
-                            <a href="pagebuku.html">
-                                <img
-                                    src="images/book-cover-small.png"
-                                    alt="gambar buku"
-                                    class="gambarBuku"
-                                />
-                                <h3 class="deskripsiBuku">Ini Judul Buku</h3>
-                                <p class="deskripsiBuku">Ini Penulis Buku</p>
-                            </a>
-                        </div>
+                        
+                    <?php
+                        $query = mysqli_query($koneksi, "SELECT * FROM buku NATURAL JOIN penulis_buku GROUP BY judul LIMIT 15");//tampilin smua jenis buku
+                        while($row=mysqli_fetch_assoc($query)){
+                            
+                            echo "
+                                <div class ='bungkusBuku'>
+                                    <a href='".BASE_URL."index.php?page=detail&kode_buku=$row[kode_buku]&inisial_nama_belakang=$row[inisial_nama_belakang]&huruf_depan_judul=$row[huruf_depan_judul]'>
+                                        <img src='$row[gambar_buku]' class='gambarBuku'/>
+                                    <h3 class='deskripsiBuku'> $row[judul]</h3> <p class='deskripsiBuku'>$row[penulis]</p>
+                                        </a>
+                                    </div>";
+                        }
+                        ?>
                     </div>
                 </div>
                 <!-- Kanan -->

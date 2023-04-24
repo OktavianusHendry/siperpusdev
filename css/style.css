@@ -495,9 +495,10 @@ svg#btn_search {
 }
 
 .btn-pinjam {
-    width: 65px;
+    font-family: "Montserrat", sans-serif;
+    width: 78px;
     border: 1px solid #fd7e14;
-    padding: 5px 10px;
+    padding: 5px 15px;
     border-radius: 5px;
     background-color: #fd7e14;
     color: #fff;
@@ -599,4 +600,120 @@ svg#btn_search {
 .fill {
     width: 100%;
     height: 130px;
+}
+
+
+/* Popup */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    z-index: 10;
+    background-color: white;
+    width: 50%;
+    max-width: 60%;
+    padding: 33px;
+    border-radius: 20px;
+}
+
+.popup.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup .popup-header {
+    display: flex;
+    align-items: center;
+    padding: 0px 15px;
+    justify-content: space-between;
+height: 32px;}
+
+.popup-body .line1 {
+    margin: 25px 0px;
+line-height: 24px;}
+
+.popup-body {
+    text-align: center;
+}
+
+.popup-body .line2 {
+    margin-bottom: 25px;
+}
+
+.popup-footer input[type="submit"] {
+    font-family: "Montserrat", sans-serif;
+    background: #fd7e14;
+    border: 0px;
+    padding: 10px 36px;
+    margin: 0px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    color: white;
+}
+
+.popup-footer input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: #0e6333;
+    transition: 0.5s;
+}
+
+.popup-footer button {
+    font-family: "Montserrat", sans-serif;
+    background: #fd7e14;
+    border: 0px;
+    padding: 10px 36px;
+    margin: 0px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 13px;
+    color: white;
+}
+
+.popup-footer button:hover {
+    cursor: pointer;
+    background-color: #0e6333;
+    transition: 0.5s;
+}
+
+.popup-footer {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+#overlay{
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    transition: 200ms ease-in-out;
+}
+
+#overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.close-button {
+    border: 0px;
+    background-color: white;
+    font-size: 47px;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    background-color: white;
+}
+
+.popup-header img {
+    width: 40px;
+}
+
+.popup-header div {
+    width: 28px;
 }
