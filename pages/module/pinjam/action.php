@@ -28,7 +28,6 @@
             mysqli_query($koneksi, "UPDATE meminjam SET no_peminjaman='$no_peminjaman', kode_buku='$kode_buku', inisial_nama_belakang='$inisial_nama_belakang', huruf_depan_judul='$huruf_depan_judul', no_pembaca='$no_pembaca', tgl_peminjaman='$tgl_peminjaman', tgl_kembali_buku='$tgl_kembali_buku', keterangan='$keterangan'
                                     WHERE no_peminjaman='$no_peminjaman'");
 
-
             $query1 = mysqli_query($koneksi, "SELECT id FROM mengembalikan ORDER BY id DESC LIMIT 1");
             $row1 = mysqli_fetch_assoc($query1);
 
