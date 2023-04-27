@@ -122,7 +122,7 @@
                         <div class='popup-header'>
                             <div></div>
                             <img src='../images/tandaceklis.svg'></img>
-                            <a href='".BASE_URL."../pages/detail.php?page=detail&kode_buku=$row[kode_buku]&inisial_nama_belakang=$row[inisial_nama_belakang]&huruf_depan_judul=$row[huruf_depan_judul]'> <button class='close-button'>&times;</button> </a>
+                            <a href='".BASE_URL."../pages/detail.php?kode_buku=$row[kode_buku]&inisial_nama_belakang=$row[inisial_nama_belakang]&huruf_depan_judul=$row[huruf_depan_judul]'> <button class='close-button'>&times;</button> </a>
                         </div>
 
                         <div class='popup-body'>
@@ -132,7 +132,7 @@
 
                         <div class='popup-footer'>
                             <span>
-                                <a href='".BASE_URL."../pages/detail.php?page=detail&kode_buku=$row[kode_buku]&inisial_nama_belakang=$row[inisial_nama_belakang]&huruf_depan_judul=$row[huruf_depan_judul]'> <button> Tutup </button> </a>
+                                <a href='".BASE_URL."../pages/detail.php?kode_buku=$row[kode_buku]&inisial_nama_belakang=$row[inisial_nama_belakang]&huruf_depan_judul=$row[huruf_depan_judul]'> <button> Tutup </button> </a>
                             </span>
                         </div>
                     </div>

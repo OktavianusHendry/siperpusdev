@@ -33,7 +33,7 @@
                     <div class="text-user">
                         <?php
                         if($no_pembaca){
-                            echo "<span style='display: inline-block; float: right; right: 15px; position: relative; text-align: right; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; width: 150px;margin-right: 15px'>Hi, <b>$nama!</b></span> <br> <a href='".BASE_URL."index.php?page=my_perpus&module=pinjam&action=list'><button class='btn-myp'>My Perpus</button></a> <a href='".BASE_URL."function/logout.php'><button class='btn-logout'>Logout</button></a> </br>";
+                            echo "<span style='display: inline-block; float: right; right: 15px; position: relative; text-align: right; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; width: 150px;margin-right: 15px'>Hi, <b>$nama!</b></span> <br> <a href='".BASE_URL."../pages/myperpus.php?module=pinjam&action=list'><button class='btn-myp'>My Perpus</button></a> <a href='".BASE_URL."function/logout.php'><button class='btn-logout'>Logout</button></a> </br>";
                         }else{
                             echo "<a href=".BASE_URL."../pages/login.php><button class='btn-login'>Login</button></a>";
                         }
