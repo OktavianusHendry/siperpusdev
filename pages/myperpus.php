@@ -17,6 +17,7 @@
 <div id="bg-page-perpus">
 
         <div id="menu-perpus">
+        <div class="fill"></div>
             <ul>
                 <?php
                 
@@ -41,8 +42,8 @@
         </div>
         
         <div id="content-menu">
+        <div class="fill"></div>
             <?php
-
                 $file = "module/$module/$action.php";
                 if(file_exists($file)){
                     include_once($file);

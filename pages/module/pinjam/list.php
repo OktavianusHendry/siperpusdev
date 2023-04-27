@@ -9,7 +9,6 @@
         $queryPeminjam= mysqli_query($koneksi, "SELECT * FROM meminjam NATURAL JOIN pembaca NATURAL JOIN buku ORDER BY keterangan ASC");
         
         echo "
-        
             <div id='frame-tambah'>
                 <a href='".BASE_URL."index.php?page=my_perpus&module=pinjam&action=form' class='tombol-2'>+ Tambah Peminjam</a>
             </div>

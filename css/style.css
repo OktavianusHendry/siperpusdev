@@ -724,3 +724,168 @@ svg#btn_search {
 .popup-header div {
     width: 28px;
 }
+
+/* My Perpus */
+#menu-perpus {
+    width: 15%;
+    float: left;
+    height: auto;
+    margin-bottom: 30px;
+    /* margin-top: 104px; */
+}
+
+#menu-perpus ul li a {
+    display: block;
+    margin: 5px 30px;
+    list-style: none;
+    padding: 10px 10px 10px 20px;
+    background-color: #fd7e14;
+    border-radius: 8px;
+    transition: 200ms;
+    color: white;
+}
+
+#menu-perpus ul li {
+    list-style: none;
+}
+#menu-perpus ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+#content-menu {
+    width: 83%;
+    float: left;
+    height: auto;
+    padding: 10px 15px;
+    /* margin-top: 104px; */
+}
+
+.form-module {
+    margin-bottom: 20px;
+}
+
+.form-module label {
+    display: block;
+}
+
+.form-module input[type="text"] {
+    padding: 7px;
+    margin-top: 7px;
+    width: 30%;
+    height: 25px;
+}
+
+.form-module select {
+    padding: 7px;
+    height: 36px;
+    width: 30%;
+    margin-top: 7px;
+}
+
+.form-module input[type="submit"] {
+    margin: 15px 0px 0px 0px;
+    width: 15%;
+    color: white;
+    height: 40px;
+    background: orange;
+    border: 0px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.tombol {
+    background-color: green;
+    padding: 12px;
+    border-radius: 12px;
+    color: white;
+}
+
+.table-list {
+    margin-top: 16px;
+    border-collapse: collapse;
+}
+
+.tombol-2 {
+    background-color: #fd7e14;
+    padding: 6px 18px;
+    border-radius: 6px;
+    color: white;
+}
+
+.table-list-2 {
+    margin-top: 16px;
+    border-collapse: collapse;
+}
+
+.row-judul {
+    background-color: green;
+    height: 100px;
+    color: white;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.row-judul-2 {
+    background-color: green;
+    height: 46px;
+    color: white;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.table-list tr {
+    font-size: 14px;
+}
+
+.table-list td {
+    padding: 10px;
+    text-align: center;
+}
+
+.table-list th {
+    padding: 10px;
+}
+
+.table-list-2 tr {
+    font-size: 14px;
+}
+
+.table-list-2 td {
+    padding: 14px 22px;
+    text-align: center;
+}
+
+.table-list-2 th {
+    padding: 10px;
+}
+
+.box1 {
+    width: 80%;
+    display: block;
+    height: auto;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.box2 {
+    width: 80%;
+    display: block;
+    height: auto;
+}
+
+.table-list-2 th:first-child {
+    border-radius: 8px 0px 0px 8px;
+}
+
+.table-list-2 th:last-child {
+    border-radius: 0px 8px 8px 0px;
+}
+
+.table-list th:first-child {
+    border-radius: 8px 0px 0px 8px;
+}
+
+.table-list th:last-child {
+    border-radius: 0px 8px 8px 0px;
+}

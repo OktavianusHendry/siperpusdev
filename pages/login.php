@@ -18,6 +18,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SiPERPUS | Login</title>
     <link rel="stylesheet" href="../css/loginstyle.css" type="text/css" />
+    <link
+        rel="shortcut icon"
+        type="image/icon"
+        href="../images/praditaicon1.ico"
+    />
 </head>
 <body>
     <!--Container Tengah-->
