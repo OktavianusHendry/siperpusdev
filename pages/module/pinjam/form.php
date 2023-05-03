@@ -37,7 +37,7 @@
 
 ?>
 
-<form action ="<?php echo  BASE_URL."module/pinjam/action.php?no_peminjaman=$no_peminjaman"; ?>" method="POST">
+<form action ="<?php echo  BASE_URL."pages/module/pinjam/action.php?no_peminjaman=$no_peminjaman"; ?>" method="POST">
 
         <div class="form-module">   
             <label>No Peminjaman</label>

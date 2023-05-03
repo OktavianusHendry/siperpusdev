@@ -1,18 +1,22 @@
+<?php
+    $no_pembaca = isset($_SESSION['no_pembaca']) ? $_SESSION['no_pembaca'] : false;
+    $nama = isset($_SESSION['nama']) ? $_SESSION['nama'] : false;
+    $kedudukan = isset($_SESSION['kedudukan']) ? $_SESSION['kedudukan'] : false;
+?>
 
             <!-- Banner -->
             <div class="fill"></div>
             <div id="pembungkusBanner">
                 <div class="banner">
-                    <img
-                        class="firstBanner"
-                        src="images/banner.jpg"
-                        alt="banner1"
-                    />
-                    <img src="images/banner.jpeg" alt="banner2" />
-                    <img src="images/banner.jpg" alt="banner3" />
-                    <img src="images/banner.jpeg" alt="banner4" />
-                    <img src="images/banner.jpg" alt="banner5" />
-                    <img src="images/banner.jpeg" alt="banner6" />
+                    <?php
+                        $queryBanner = mysqli_query($koneksi, "SELECT * FROM banner WHERE tampilkan=1 LIMIT 5");
+                        $firstBanner = true;
+                        while ($rowBanner = mysqli_fetch_assoc($queryBanner)) {
+                            $class = $firstBanner ? 'firstBanner' : '';
+                            echo "<img src='{$rowBanner['images']}' alt='banner' class='$class' />";
+                            $firstBanner = false;
+                        }
+                    ?>
                 </div>
             </div>
             <!-- Buku Recomendation-->
@@ -28,14 +32,14 @@
                         <?php
 
 
-                        $query = mysqli_query($koneksi, "SELECT * FROM buku NATURAL JOIN penulis_buku GROUP BY judul LIMIT 15");//tampilin smua jenis buku
-                        while($row=mysqli_fetch_assoc($query)){
+                        $queryPopular = mysqli_query($koneksi, "SELECT judul, kode_buku, inisial_nama_belakang, huruf_depan_judul, penulis, gambar_buku, COUNT(*) as viewed FROM buku_terlihat NATURAL JOIN buku NATURAL JOIN penulis_buku WHERE waktu_dilihat>=DATE_SUB(NOW(), INTERVAL 1 WEEK) GROUP BY kode_buku, inisial_nama_belakang, huruf_depan_judul ORDER BY viewed DESC LIMIT 10"); //tampilin smua jenis buku
+                        while($rowPopular=mysqli_fetch_assoc($queryPopular)){
                             
                             echo "
                                 <div class ='bungkusBuku'>
-                                    <a href='".BASE_URL."../pages/detail.php?kode_buku=$row[kode_buku]&inisial_nama_belakang=$row[inisial_nama_belakang]&huruf_depan_judul=$row[huruf_depan_judul]'>
-                                        <img src='$row[gambar_buku]' class='gambarBuku'/>
-                                    <h3 class='deskripsiBuku'> $row[judul]</h3> <p class='deskripsiBuku'>$row[penulis]</p>
+                                    <a href='".BASE_URL."../pages/detail.php?kode_buku=$rowPopular[kode_buku]&inisial_nama_belakang=$rowPopular[inisial_nama_belakang]&huruf_depan_judul=$rowPopular[huruf_depan_judul]'>
+                                        <img src='$rowPopular[gambar_buku]' class='gambarBuku'/>
+                                    <h3 class='deskripsiBuku'> $rowPopular[judul]</h3> <p class='deskripsiBuku'>$rowPopular[penulis]</p>
                                         </a>
                                 </div>";
                         }
@@ -51,14 +55,14 @@
                     <div class="scroll">
                         
                     <?php
-                        $query = mysqli_query($koneksi, "SELECT * FROM buku NATURAL JOIN penulis_buku GROUP BY judul LIMIT 15");//tampilin smua jenis buku
-                        while($row=mysqli_fetch_assoc($query)){
+                        $queryNew = mysqli_query($koneksi, "SELECT * FROM buku NATURAL JOIN penulis_buku GROUP BY judul ORDER BY tanggal_ditambahkan DESC LIMIT 10");//tampilin smua jenis buku
+                        while($rowNew=mysqli_fetch_assoc($queryNew)){
                             
                             echo "
                                 <div class ='bungkusBuku'>
-                                    <a href='".BASE_URL."../pages/detail.php?kode_buku=$row[kode_buku]&inisial_nama_belakang=$row[inisial_nama_belakang]&huruf_depan_judul=$row[huruf_depan_judul]'>
-                                        <img src='$row[gambar_buku]' class='gambarBuku'/>
-                                    <h3 class='deskripsiBuku'> $row[judul]</h3> <p class='deskripsiBuku'>$row[penulis]</p>
+                                    <a href='".BASE_URL."../pages/detail.php?kode_buku=$rowNew[kode_buku]&inisial_nama_belakang=$rowNew[inisial_nama_belakang]&huruf_depan_judul=$rowNew[huruf_depan_judul]'>
+                                        <img src='$rowNew[gambar_buku]' class='gambarBuku'/>
+                                    <h3 class='deskripsiBuku'> $rowNew[judul]</h3> <p class='deskripsiBuku'>$rowNew[penulis]</p>
                                         </a>
                                     </div>";
                         }
@@ -72,135 +76,38 @@
                     <div class="StripHijau"></div>
 
                     <div class="scrollKanan">
-                        <div class="bungkusBuku">
-                            <img
-                                src="images/book-cover-small.png"
-                                alt="gambar buku"
-                                class="gambarBuku"
-                            />
-                            <div class="deskripsiBuku">
-                                <a href="pagebuku.html">
-                                    <h3>Ini Judul Bukuuuuuuuuuuuuuuuuuuuu</h3>
-                                    <p>Ini Penulis Buku</p>
-                                </a>
-                            </div>
-                        </div>
 
-                        <div class="bungkusBuku">
-                            <img
-                                src="images/book-cover-small.png"
-                                alt="gambar buku"
-                                class="gambarBuku"
-                            />
-                            <div class="deskripsiBuku">
-                                <a href="pagebuku.html">
-                                    <h3>Ini Judul Bukuuuuuuuuuuuuuuuuuuuu</h3>
-                                    <p>Ini Penulis Buku</p>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="bungkusBuku">
-                            <img
-                                src="images/book-cover-small.png"
-                                alt="gambar buku"
-                                class="gambarBuku"
-                            />
-                            <div class="deskripsiBuku">
-                                <a href="pagebuku.html">
-                                    <h3>Ini Judul Bukuuuuuuuuuuuuuuuuuuuu</h3>
-                                    <p>Ini Penulis Buku</p>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="bungkusBuku">
-                            <img
-                                src="images/book-cover-small.png"
-                                alt="gambar buku"
-                                class="gambarBuku"
-                            />
-                            <div class="deskripsiBuku">
-                                <a href="pagebuku.html">
-                                    <h3>Ini Judul Bukuuuuuuuuuuuuuuuuuuuu</h3>
-                                    <p>Ini Penulis Buku</p>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="bungkusBuku">
-                            <img
-                                src="images/book-cover-small.png"
-                                alt="gambar buku"
-                                class="gambarBuku"
-                            />
-                            <div class="deskripsiBuku">
-                                <a href="pagebuku.html">
-                                    <h3>Ini Judul Bukuuuuuuuuuuuuuuuuuuuu</h3>
-                                    <p>Ini Penulis Buku</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bawahnya 3 Section -->
-            <div class="container">
-                <div class="blog">
-                    <h2>Blog & Review</h2>
-                    <div class="StripKuning"></div>
-                    <div class="StripHijau"></div>
-
-                    <div class="scrollBlog">
-                        <div class="pembungkusBlog">
-                            <img
-                                src="images/banner.jpeg"
-                                alt="gambar buku"
-                                class="gambarBlog"
-                            />
-                            <h3>Blog 1</h3>
-                        </div>
-                        <div class="pembungkusBlog">
-                            <img
-                                src="images/banner.jpeg"
-                                alt="gambar buku"
-                                class="gambarBlog"
-                            />
-                            <h3>Blog 2</h3>
-                        </div>
-                        <div class="pembungkusBlog">
-                            <img
-                                src="images/banner.jpeg"
-                                alt="gambar buku"
-                                class="gambarBlog"
-                            />
-                            <h3>Blog 3</h3>
-                        </div>
-                        <div class="pembungkusBlog">
-                            <img
-                                src="images/banner.jpeg"
-                                alt="gambar buku"
-                                class="gambarBlog"
-                            />
-                            <h3>Blog 4</h3>
-                        </div>
-                        <div class="pembungkusBlog">
-                            <img
-                                src="images/banner.jpeg"
-                                alt="gambar buku"
-                                class="gambarBlog"
-                            />
-                            <h3>Blog 5</h3>
-                        </div>
-                        <div class="pembungkusBlog">
-                            <img
-                                src="images/banner.jpeg"
-                                alt="gambar buku"
-                                class="gambarBlog"
-                            />
-                            <h3>Blog 6</h3>
-                        </div>
+                    <?php
+                    
+                        $queryLastViewed = mysqli_query($koneksi, "SELECT * FROM buku_terlihat NATURAL JOIN buku NATURAL JOIN pembaca NATURAL JOIN penulis_buku WHERE no_pembaca='$no_pembaca' GROUP BY judul ORDER BY waktu_dilihat DESC LIMIT 10");//tampilin smua jenis buku
+                        
+                        
+                        if($no_pembaca){
+                            if(mysqli_num_rows($queryLastViewed)==0){
+                                echo "<p>Silahkan pergi melihat buku :)</p>";
+                            }else{
+                                while($rowLastViewed=mysqli_fetch_assoc($queryLastViewed)){
+                                    echo "<div class='bungkusBuku'>
+                                        <img
+                                            src='$rowLastViewed[gambar_buku]'
+                                            alt='gambar buku'
+                                            class='gambarBuku'
+                                        />
+                                        <div class='deskripsiBuku'>
+                                            <a href='".BASE_URL."../pages/detail.php?kode_buku=$rowLastViewed[kode_buku]&inisial_nama_belakang=$rowLastViewed[inisial_nama_belakang]&huruf_depan_judul=$rowLastViewed[huruf_depan_judul]'>
+                                                <h3>$rowLastViewed[judul]</h3>
+                                                <p>$rowLastViewed[penulis]</p>
+                                            </a>
+                                        </div>
+                                    </div>";
+                                }
+                            }
+                        }else{
+                            echo "<p>Silahkan login terlebih dahulu!</p>
+                            <a href=".BASE_URL."../pages/login.php><button class='btn-login'>Login</button></a>";
+                        }
+                        
+                    ?>
                     </div>
                 </div>
             </div>

@@ -30,6 +30,9 @@
                 <li>
                     <a href="<?php echo BASE_URL."pages/myperpus.php?module=pembaca&action=list"; ?>" <?php if($module == "pembaca"){echo "class = 'active'";}?> >Pembaca</a>
                 </li>
+                <li>
+                    <a href="<?php echo BASE_URL."pages/myperpus.php?module=banner&action=list"; ?>" <?php if($module == "banner"){echo "class = 'active'";}?> >Banner</a>
+                </li>
 
                 <?php
                     }

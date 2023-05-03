@@ -2,16 +2,22 @@
     include_once("../function/helper.php");
     include_once("../function/koneksi.php");
 
-    $no_pembaca = isset($_SESSION['no_pembaca']) ? $_SESSION['no_pembaca']:false;
-    $kedudukan = isset($_SESSION['kedudukan']) ? $_SESSION['kedudukan']:false;
-    $nama = isset($_SESSION['nama']) ? $_SESSION['nama']:false;
-
     $kode_buku = $_GET['kode_buku'];
     $inisial_nama_belakang = $_GET['inisial_nama_belakang'];
     $huruf_depan_judul = $_GET['huruf_depan_judul'];
 
     $query = mysqli_query($koneksi, "SELECT * FROM buku NATURAL JOIN penulis_buku WHERE kode_buku = '$kode_buku' AND inisial_nama_belakang = '$inisial_nama_belakang' AND huruf_depan_judul = '$huruf_depan_judul'");//buat ngambil atribut buku buku nya
     $row = mysqli_fetch_assoc($query);
+
+    $page_title = "SiPERPUS | " . $row['judul'];
+    include ('../layouts/navbar.php');
+    
+    $no_pembaca = isset($_SESSION['no_pembaca']) ? $_SESSION['no_pembaca']:false;
+    $kedudukan = isset($_SESSION['kedudukan']) ? $_SESSION['kedudukan']:false;
+    $nama = isset($_SESSION['nama']) ? $_SESSION['nama']:false;
+
+    // Itung Last Viewed
+    $queryLastView = mysqli_query($koneksi, "INSERT INTO buku_terlihat (no_pembaca, kode_buku, inisial_nama_belakang, huruf_depan_judul) VALUES ('$no_pembaca', '$kode_buku', '$inisial_nama_belakang', '$huruf_depan_judul')");
 
     $jenis_buku = $row['jenis_buku'];
     
@@ -20,9 +26,6 @@
     $banyakcharacter = strlen($sinopsis);
     $firsthalf = 300;
     $halfend = -1 * ($banyakcharacter - $firsthalf);
-
-    $page_title = "SiPERPUS | " . $row['judul'];
-    include ('../layouts/navbar.php');
 ?>
 
 

@@ -1,7 +1,7 @@
 <?php
 
-    include_once("../../function/koneksi.php");
-    include_once("../../function/helper.php");  
+    include_once("../../../function/koneksi.php");
+    include_once("../../../function/helper.php");  
 
     $no_peminjaman = $_POST['no_peminjaman'];
     $kode_buku = $_POST['kode_buku'];
@@ -63,7 +63,6 @@
         mysqli_query($koneksi, "DELETE FROM meminjam WHERE no_peminjaman='$no_peminjaman'");
     }
         
-    header("location:".BASE_URL."index.php?page=my_perpus&module=pinjam&action=list");
+    header("location:".BASE_URL."pages/myperpus.php?module=pinjam&action=list");
 
 ?>
-

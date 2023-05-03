@@ -10,7 +10,7 @@
         
         echo "
             <div id='frame-tambah'>
-                <a href='".BASE_URL."index.php?page=my_perpus&module=pinjam&action=form' class='tombol-2'>+ Tambah Peminjam</a>
+                <a href='".BASE_URL."pages/myperpus.php?module=pinjam&action=form' class='tombol-2'>+ Tambah Peminjam</a>
             </div>
 
         ";
@@ -41,7 +41,7 @@
                         <td>$row[tgl_kembali_buku]</td>
                         <td>$row[keterangan]</td>
                         <td>
-                            <a class='tombol-2' href='".BASE_URL."index.php?page=my_perpus&module=pinjam&action=form&no_peminjaman=$row[no_peminjaman]'>Edit</a>
+                            <a class='tombol-2' href='".BASE_URL."pages/myperpus.php?module=pinjam&action=form&no_peminjaman=$row[no_peminjaman]'>Edit</a>
                         </tr>";
                 }
             }

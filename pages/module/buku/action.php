@@ -1,8 +1,10 @@
 <?php
 
-    include_once("../../function/koneksi.php");
-    include_once("../../function/helper.php");  
+    include_once("../../../function/koneksi.php");
+    include_once("../../../function/helper.php");  
 
+    date_default_timezone_set("Asia/Jakarta");
+    $tgl_ditambahkan = date("Y-m-d");
     $kode_buku = $_POST['kode_buku'];
     $inisial_nama_belakang = $_POST['inisial_nama_belakang'];
     $huruf_depan_judul = $_POST['huruf_depan_judul'];
@@ -22,8 +24,8 @@
     $penulisbukuproses = explode('/', $penulis2); //explode = buat misahin nama nama penulis yg dipisah pake /
 
     if($button == "Add"){
-        mysqli_query($koneksi, "INSERT INTO buku (kode_buku, inisial_nama_belakang, huruf_depan_judul, judul, penerbit, isbn, jenis_buku, genre, stok, tahun_terbit, gambar_buku, sinopsis) 
-                                VALUES ('$kode_buku', '$inisial_nama_belakang', '$huruf_depan_judul', '$judul', '$penerbit', '$isbn', '$jenis_buku', '$genre', '$stok', '$tahun_terbit', '$gambar_buku', '$sinopsis')");
+        mysqli_query($koneksi, "INSERT INTO buku (kode_buku, inisial_nama_belakang, huruf_depan_judul, judul, penerbit, isbn, jenis_buku, genre, stok, tahun_terbit, gambar_buku, sinopsis, tgl_ditambahkan) 
+                                VALUES ('$kode_buku', '$inisial_nama_belakang', '$huruf_depan_judul', '$judul', '$penerbit', '$isbn', '$jenis_buku', '$genre', '$stok', '$tahun_terbit', '$gambar_buku', '$sinopsis', '$tgl_ditambahkan')");
 
         foreach ($penulisbukuproses as $penulisbuku){
         mysqli_query($koneksi, "INSERT INTO penulis_buku (kode_buku, inisial_nama_belakang, huruf_depan_judul, penulis) 
@@ -57,5 +59,5 @@
     }
 
  
-    header("location:".BASE_URL."index.php?page=my_perpus&module=buku&action=list");
+    header("location:".BASE_URL."pages/myperpus.php?module=buku&action=list");
 ?>

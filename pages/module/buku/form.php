@@ -37,7 +37,7 @@
 
 ?>
 
-<form action ="<?php echo  BASE_URL."module/buku/action.php?kode_buku=$kode_buku&inisial_nama_belakang=$inisial_nama_belakang&huruf_depan_judul=$huruf_depan_judul"; ?>" method="POST">
+<form action ="<?php echo  BASE_URL."pages/module/buku/action.php?kode_buku=$kode_buku&inisial_nama_belakang=$inisial_nama_belakang&huruf_depan_judul=$huruf_depan_judul"; ?>" method="POST">
 
         <div class="form-module">   
             <label>Kode Buku</label>

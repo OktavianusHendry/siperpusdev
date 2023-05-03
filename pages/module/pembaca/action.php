@@ -1,7 +1,7 @@
 <?php
 
-    include_once("../../function/koneksi.php");
-    include_once("../../function/helper.php");  
+    include_once("../../../function/koneksi.php");
+    include_once("../../../function/helper.php");  
 
     $no_pembaca = $_POST['no_pembaca'];
     $nama = $_POST['nama'];
@@ -25,5 +25,5 @@
     }
 
  
-    header("location:".BASE_URL."index.php?page=my_perpus&module=pembaca&action=list");
+    header("location:".BASE_URL."pages/myperpus.php?module=pembaca&action=list");
 ?>
