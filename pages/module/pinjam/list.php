@@ -10,14 +10,14 @@
         
         echo "
             <div id='frame-tambah'>
-                <a href='".BASE_URL."pages/myperpus.php?module=pinjam&action=form' class='tombol-2'>+ Tambah Peminjam</a>
+                <button class='btn-tambah'><a href='".BASE_URL."pages/myperpus.php?module=pinjam&action=form' class='tombol-2'>+ Tambah Peminjam</a> </button>
             </div>
 
         ";
 
         echo"<table class='table-list-2'>";
 
-        echo "<tr class='row-judul-2'>
+        echo "<tr class='row-judul-2pinjam'>
                 <th>No Peminjaman</th>
                 <th>Judul</th>
                 <th>Nama Peminjam</th>
@@ -41,7 +41,7 @@
                         <td>$row[tgl_kembali_buku]</td>
                         <td>$row[keterangan]</td>
                         <td>
-                            <a class='tombol-2' href='".BASE_URL."pages/myperpus.php?module=pinjam&action=form&no_peminjaman=$row[no_peminjaman]'>Edit</a>
+                            <button class='btn-edit'><a class='tombol-2' href='".BASE_URL."pages/myperpus.php?module=pinjam&action=form&no_peminjaman=$row[no_peminjaman]'>Edit</a></button>
                         </tr>";
                 }
             }
@@ -50,7 +50,7 @@
 
         echo"<table class='table-list-2'>";
 
-        echo "<tr class='row-judul-2'>
+        echo "<tr class='row-judul-2pinjam'>
                 <th>No Peminjaman</th>
                 <th>Judul</th>
                 <th>Nama Peminjam</th>

@@ -26,17 +26,17 @@
 
 
         <div class="form-module">   
-            <label>Nama Banner</label>
+            <p>Nama Banner</p>
             <span><input type="text" name="nama" value="<?php echo $nama; ?>" /></span>
         </div>
 
         <div class="form-module">   
-            <label>Link Banner</label>
+            <p>Link Banner</p>
             <span><input type="text" name="images" value="<?php echo $images; ?>" /></span>
         </div>
 
         <div class="form-module">   
-            <label>Tampilkan</label>
+            <p>Tampilkan</p>
             <input type="radio" name="tampilkan" value="1" checked <?php if($tampilkan == 1){ echo "checked='true'"; } ?> /> Ya
             <input type="radio" name="tampilkan" value="0" <?php if($tampilkan == 0){ echo "checked='true'"; } ?> /> Tidak
         </div>

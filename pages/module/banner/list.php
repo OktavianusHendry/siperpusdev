@@ -1,5 +1,5 @@
 <div id="frame-tambah">
-    <a href="<?php echo BASE_URL."pages/myperpus.php?module=banner&action=form"; ?>" class="tombol-2">+ Tambah Banner</a>
+    <button class="btn-tambah"><a href="<?php echo BASE_URL."pages/myperpus.php?module=banner&action=form"; ?>" class="tombol-2">+ Tambah Banner</a></button>
 </div>
 
 <?php
@@ -23,7 +23,7 @@
                     <td>$row[nama]</td>
                     <td>$row[tampilkan]</td>
                     <td>
-                        <a class='tombol-2' href='".BASE_URL."pages/myperpus.php?module=banner&action=form&id=$row[id]'>Edit</a>
+                        <button class= 'btn-edit'><a class='tombol-2' href='".BASE_URL."pages/myperpus.php?module=banner&action=form&id=$row[id]'>Edit</a></button>
                     </tr>";
         }
     }

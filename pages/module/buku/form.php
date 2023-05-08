@@ -40,42 +40,42 @@
 <form action ="<?php echo  BASE_URL."pages/module/buku/action.php?kode_buku=$kode_buku&inisial_nama_belakang=$inisial_nama_belakang&huruf_depan_judul=$huruf_depan_judul"; ?>" method="POST">
 
         <div class="form-module">   
-            <label>Kode Buku</label>
+            <p>Kode Buku</p>
             <span><input type="text" name="kode_buku" value="<?php echo $kode_buku; ?>" /></span>
         </div>
 
         <div class="form-module">   
-            <label>Inisial Nama Belakang</label>
+            <p>Inisial Nama Belakang</p>
             <span><input type="text" name="inisial_nama_belakang" value="<?php echo $inisial_nama_belakang; ?>" /></span>
         </div>
 
         <div class="form-module">   
-            <label>Huruf Depan Judul</label>
+            <p>Huruf Depan Judul</p>
             <span><input type="text" name="huruf_depan_judul" value="<?php echo $huruf_depan_judul; ?>" /></span>
         </div>
 
         <div class="form-module">   
-            <label>Judul</label>
+            <p>Judul</p>
             <span><input type="text" name="judul" value="<?php echo $judul; ?>"/></span>
         </div>
 
         <div class="form-module">   
-            <label>Penulis</label>
+            <p>Penulis</p>
             <span><input type="text" name="penulis" value="<?php echo $penulis; ?>" /></span>
         </div>
 
         <div class="form-module">   
-            <label>Penerbit</label>
+            <p>Penerbit</p>
             <span><input type="text" name="penerbit" value="<?php echo $penerbit; ?>"/></span>
         </div>
 
         <div class="form-module">   
-            <label>ISBN</label>
+            <p>ISBN</p>
             <span><input type="text" name="isbn" value="<?php echo $isbn; ?>" /></span>
         </div>
 
         <div class="form-module">   
-            <label>Jenis Buku</label>
+            <p>Jenis Buku</p>
             <select name="jenis_buku" >
                 <option value="Novel" <?php if($jenis_buku == "Novel"){ echo "selected"; }?>>Novel</option>
                 <option value="Buku Umum" <?php if($jenis_buku == "Buku Umum"){ echo "selected"; }?>>Buku Umum</option>
@@ -86,7 +86,7 @@
         </div>
 
         <div class="form-module">   
-            <label>Genre</label>
+            <p>Genre</p>
             <select name="genre" >
                 <option value="Teknik Informatika" <?php if($genre == "Teknik Informatika"){ echo "selected"; }?>>Teknik Informatika</option>
                 <option value="Desain Interior" <?php if($genre == "Desain Interior"){ echo "selected"; }?>>Desain Interior</option>               
@@ -105,22 +105,22 @@
         </div>
 
         <div class="form-module">   
-            <label>Stok</label>
+            <p>Stok</p>
             <span><input type="text" name="stok" value="<?php echo $stok; ?>"/></span>
         </div>
         
         <div class="form-module">   
-            <label>Tahun Terbit</label>
+            <p>Tahun Terbit</p>
             <span><input type="text" name="tahun_terbit" value="<?php echo $tahun_terbit; ?>" /></span>
         </div>
 
         <div class="form-module">   
-            <label>Link Gambar Buku</label>
+            <p>Link Gambar Buku</p>
             <span><input type="text" name="gambar_buku" value="<?php echo $gambar_buku; ?>" /></span>
         </div>
 
         <div class="form-module">   
-            <label>Sinopsis</label>
+            <p>Sinopsis</p>
             <span><textarea id="form-text-area" name="sinopsis"><?php echo $sinopsis; ?></textarea></span>
         </div>
         

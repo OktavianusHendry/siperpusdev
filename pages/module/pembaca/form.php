@@ -26,17 +26,17 @@
 <form action ="<?php echo  BASE_URL."pages/module/pembaca/action.php?no_pembaca=$no_pembaca"; ?>" method="POST">
 
         <div class="form-module">   
-            <label>Nomor Pembaca</label>
+            <p>Nomor Pembaca</p>
             <span><input type="text" name="no_pembaca" value="<?php echo $no_pembaca; ?>" /></span>
         </div>
 
         <div class="form-module">   
-            <label>Nama</label>
+            <p>Nama</p>
             <span><input type="text" name="nama" value="<?php echo $nama; ?>" /></span>
         </div>
 
         <div class="form-module">   
-            <label>Kedudukan</label>
+            <p>Kedudukan</p>
             <select name="kedudukan" >
                 <option value="Mahasiswa" <?php if($kedudukan == "Mahasiswa"){ echo "selected"; }?>>Mahasiswa</option>
                 <option value="Dosen" <?php if($kedudukan == "Dosen"){ echo "selected"; }?>>Dosen</option>
@@ -45,12 +45,12 @@
         </div>
 
         <div class="form-module">   
-            <label>Nomor Handphone</label>
+            <p>Nomor Handphone</p>
             <span><input type="text" name="no_hp" value="<?php echo $no_hp; ?>"/></span>
         </div>
 
         <div class="form-module">   
-            <label>Email</label>
+            <p>Email</p>
             <span><input type="text" name="email" value="<?php echo $email; ?>" /></span>
         </div>
         

@@ -25,7 +25,7 @@
                     <td>$row[no_hp]</td>
                     <td>$row[email]</td>
                     <td>
-                        <a class='tombol-2' href='".BASE_URL."pages/myperpus.php?module=pembaca&action=form&no_pembaca=$row[no_pembaca]'>Edit</a>
+                        <button class='btn-edit'><a class='tombol-2' href='".BASE_URL."pages/myperpus.php?module=pembaca&action=form&no_pembaca=$row[no_pembaca]'>Edit</a></button>
                     </tr>";
         }
     }

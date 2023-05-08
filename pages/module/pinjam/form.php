@@ -40,42 +40,42 @@
 <form action ="<?php echo  BASE_URL."pages/module/pinjam/action.php?no_peminjaman=$no_peminjaman"; ?>" method="POST">
 
         <div class="form-module">   
-            <label>No Peminjaman</label>
+            <p>No Peminjaman</p>
             <span><input type="text" name="no_peminjaman" value="<?php if($no_peminjaman){echo "$no_peminjaman";} else { echo "$no_peminjaman1"; } ?>" /></span>
         </div>
 
         <div class="form-module">   
-            <label>Kode Buku</label>
+            <p>Kode Buku</p>
             <span><input type="text" name="kode_buku" value="<?php echo $kode_buku; ?>" /></span>
         </div>
 
         <div class="form-module">   
-            <label>Inisial Nama Belakang</label>
+            <p>Inisial Nama Belakang</p>
             <span><input type="text" name="inisial_nama_belakang" value="<?php echo $inisial_nama_belakang; ?>" /></span>
         </div>
 
         <div class="form-module">   
-            <label>Huruf Depan Judul</label>
+            <p>Huruf Depan Judul</p>
             <span><input type="text" name="huruf_depan_judul" value="<?php echo $huruf_depan_judul; ?>" /></span>
         </div>
 
         <div class="form-module">   
-            <label>Nomor Pembaca</label>
+            <p>Nomor Pembaca</p>
             <span><input type="text" name="no_pembaca" value="<?php echo $no_pembaca; ?>"/></span>
         </div>
 
         <div class="form-module">   
-            <label>Tanggal Pinjam</label>
+            <p>Tanggal Pinjam</p>
             <span><input type="text" name="tgl_peminjaman" value="<?php echo $tgl_peminjaman; ?>" /></span>
         </div>
         
         <div class="form-module">   
-            <label>Tanggal Kembali</label>
+            <p>Tanggal Kembali</p>
             <span><input type="text" name="tgl_kembali_buku" value="<?php echo $tgl_kembali_buku; ?>" /></span>
         </div>
 
         <div class="form-module">   
-            <label>Keterangan</label>
+            <p>Keterangan</p>
             <select name="keterangan" >
                 <option value="Belum Diambil" <?php if($keterangan == "Belum Diambil"){ echo "selected"; }?>>Belum Diambil</option>
                 <option value="Sudah Diambil" <?php if($keterangan == "Sudah Diambil"){ echo "selected"; }?>>Sudah Diambil</option>
