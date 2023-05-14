@@ -24,6 +24,5 @@
         mysqli_query($koneksi, "DELETE FROM pembaca WHERE no_pembaca='$no_pembaca'");
     }
 
- 
     header("location:".BASE_URL."pages/myperpus.php?module=pembaca&action=list");
 ?>
