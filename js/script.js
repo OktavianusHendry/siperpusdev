@@ -77,41 +77,48 @@ function handleInput() {
 }
 input.addEventListener("input", handleInput);
 
-
 //Pop up
-const openPopupButtons = document.querySelectorAll('[data-popup-target]')
-const closePopupButtons = document.querySelectorAll('[data-close-button]')
-const overlay = document.getElementById('overlay')
+const openPopupButtons = document.querySelectorAll("[data-popup-target]");
+const closePopupButtons = document.querySelectorAll("[data-close-button]");
+const overlay = document.getElementById("overlay");
 
-openPopupButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const popup = document.querySelector(button.dataset.popupTarget)
-        openPopup(popup)
-    })
-})
+openPopupButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        const popup = document.querySelector(button.dataset.popupTarget);
+        openPopup(popup);
+    });
+});
 
-overlay.addEventListener('click', () => {
-    const popups = document.querySelectorAll('.popup.active')
-    popups.forEach(popup => {
-        closePopup(popup)
-    })
-})
+overlay.addEventListener("click", () => {
+    const popups = document.querySelectorAll(".popup.active");
+    popups.forEach((popup) => {
+        closePopup(popup);
+    });
+});
 
-closePopupButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const popup = button.closest('.popup')
-        closePopup(popup)
-    })
-})
+closePopupButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        const popup = button.closest(".popup");
+        closePopup(popup);
+    });
+});
 
-function openPopup(popup){
-    if (popup == null) return
-    popup.classList.add('active')
-    overlay.classList.add('active')
+function openPopup(popup) {
+    if (popup == null) return;
+    popup.classList.add("active");
+    overlay.classList.add("active");
 }
 
 function closePopup(popup) {
-    if (popup == null) return
-    popup.classList.remove('active')
-    overlay.classList.remove('active')
+    if (popup == null) return;
+    popup.classList.remove("active");
+    overlay.classList.remove("active");
+}
+
+//Smooth Scroll Collection link
+function smoothScrollToCollection() {
+    document.querySelector("#collection").scrollIntoView({
+        behavior: "smooth", // Apply the smooth scroll behavior
+        block: "start", // Scroll to the top of the #collection element
+    });
 }

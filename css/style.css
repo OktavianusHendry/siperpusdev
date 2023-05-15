@@ -942,3 +942,22 @@ svg#btn_search {
     font-size: 14px;
     padding: 10px;
 }
+
+/* Collections */
+#collection {
+    float: left;
+    width: 100%;
+    transition: 0.5 seconds;
+    margin-bottom: 20px;
+}
+#collection .StripKuning {
+    width: 100%;
+    background-color: #fd7e14;
+}
+#collection .StripHijau {
+    width: 100%;
+    background-color: green;
+}
+#collection .bungkusBuku {
+    margin-bottom: 20px;
+}

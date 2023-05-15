@@ -316,7 +316,7 @@
                     <!-- End Of Switches -->
                     <ul>
                         <li><a href="../index.php">Home</a></li>
-                        <li><a href="#">Collection</a></li>
+                        <li><a href="../index.php#collection">Collection</a></li>
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Menu</a></li>
                     </ul>
