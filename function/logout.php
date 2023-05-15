@@ -9,5 +9,5 @@
     unset($_SESSION['nama']);
     unset($_SESSION['kedudukan']);
     
-    header("location:".BASE_URL."index.php");
+    header("location:".BASE_URL."index.php?logout=yes");
 ?>

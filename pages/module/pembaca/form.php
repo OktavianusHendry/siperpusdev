@@ -23,7 +23,7 @@
 
 ?>
 
-<form action ="<?php echo  BASE_URL."pages/module/pembaca/action.php?no_pembaca=$no_pembaca"; ?>" method="POST">
+<form action ="<?php echo  BASE_URL."pages/module/pembaca/action.php?no_pembaca=$no_pembaca"; ?>" method="POST" style="height: 600px;">
 
         <div class="form-module">   
             <p>Nomor Pembaca</p>

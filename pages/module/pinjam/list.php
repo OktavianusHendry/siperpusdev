@@ -6,7 +6,7 @@
 
     if($kedudukan == "Pustakawan"){
 
-        $queryPeminjam= mysqli_query($koneksi, "SELECT * FROM meminjam NATURAL JOIN pembaca NATURAL JOIN buku ORDER BY keterangan ASC");
+        $queryPeminjam= mysqli_query($koneksi, "SELECT * FROM meminjam NATURAL JOIN pembaca NATURAL JOIN buku ORDER BY keterangan ASC, id DESC");
         
         echo "
             <div id='frame-tambah'>
@@ -46,7 +46,7 @@
                 }
             }
     }else{
-        $queryPeminjam = mysqli_query($koneksi, "SELECT * FROM meminjam NATURAL JOIN buku NATURAL JOIN pembaca WHERE no_pembaca='$no_pembaca' ORDER BY keterangan ASC");
+        $queryPeminjam = mysqli_query($koneksi, "SELECT * FROM meminjam NATURAL JOIN buku NATURAL JOIN pembaca WHERE no_pembaca='$no_pembaca' ORDER BY  keterangan ASC, id DESC");
 
         echo"<table class='table-list-2'>";
 
