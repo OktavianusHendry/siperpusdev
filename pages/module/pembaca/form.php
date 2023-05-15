@@ -51,7 +51,7 @@
 
         <div class="form-module">   
             <p>Email</p>
-            <span><input type="text" name="email" value="<?php echo $email; ?>" /></span>
+            <span><input type="email" name="email" value="<?php echo $email; ?>" /></span>
         </div>
         
         <div class="form-module">
