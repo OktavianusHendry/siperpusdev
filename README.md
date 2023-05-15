@@ -20,6 +20,7 @@ SiPerpus merupakan web perpustakaan yang dimana kita dapat mengakses isi dan fit
 
 # Pengenalan singkat
 Projek ini merupakan projek akhir dari mata kuliah Pemrogram Web yang diajar oleh bapak Master Edison Siregar, S.T., M.Kom.
+
 Projek ini beranggotakan:
 - Ezra Christopher Kid Manopo - 2110101039
 - Oktavianus Hendry Wijaya - 2110101011
