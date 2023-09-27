@@ -24,23 +24,23 @@
                     if($kedudukan == "Pustakawan"){
 
                 ?>
-                <li>
-                    <a href="<?php echo BASE_URL."pages/myperpus.php?module=buku&action=list"; ?>" <?php if($module == "buku"){echo "class = 'active'";}?> >Buku</a>
-                </li>
-                <li>
-                    <a href="<?php echo BASE_URL."pages/myperpus.php?module=pembaca&action=list"; ?>" <?php if($module == "pembaca"){echo "class = 'active'";}?> >Pembaca</a>
-                </li>
-                <li>
-                    <a href="<?php echo BASE_URL."pages/myperpus.php?module=banner&action=list"; ?>" <?php if($module == "banner"){echo "class = 'active'";}?> >Banner</a>
-                </li>
+                    <li>
+                        <a href="<?php echo BASE_URL."pages/myperpus.php?module=buku&action=list"; ?>" <?php if($module == "buku"){echo "class = 'active'";}?> >Buku</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo BASE_URL."pages/myperpus.php?module=pembaca&action=list"; ?>" <?php if($module == "pembaca"){echo "class = 'active'";}?> >Pembaca</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo BASE_URL."pages/myperpus.php?module=banner&action=list"; ?>" <?php if($module == "banner"){echo "class = 'active'";}?> >Banner</a>
+                    </li>
 
                 <?php
                     }
-                    ?>
+                ?>
                     
-                <li>
-                    <a href="<?php echo BASE_URL."pages/myperpus.php?module=pinjam&action=list"; ?>" <?php if($module == "pinjam"){echo "class = 'active'";}?> >Pinjam</a>
-                </li>
+                    <li>
+                        <a href="<?php echo BASE_URL."pages/myperpus.php?module=pinjam&action=list"; ?>" <?php if($module == "pinjam"){echo "class = 'active'";}?> >Pinjam</a>
+                    </li>
             </ul>
         </div>
         
